@@ -79,37 +79,39 @@ const WheelComponent = () => {
     return (
         <div className="flex h-screen w-screen relative">
             <div className="flex flex-col items-center w-1/2 p-4">
-                <img src={logo} alt="spin" className='w-[150px] h-[150px] spin' />
-                <div>
-                <h2 className="text-3xl font-semibold text-white my-4">
-                    Rifa Emprendedores del Desierto BNI
-                </h2>
-                <div className='flex items-center justify-center'>
-                <label className="mb-4">
-                    <span className="sr-only">Choose file</span>
-                    <input
-                        type="file"
-                        accept=".xlsx, .xls"
-                        onChange={handleFileUpload}
-                        className="block w-full text-sm text-gray-500
-                                   file:mr-4 file:py-2 file:px-4
-                                   file:rounded-full file:border-0
-                                   file:text-sm file:font-semibold
-                                   file:bg-blue-50 file:text-black
-                                   hover:file:bg-red-50"
-                    />
-                </label>
+                <div className="flex items-center space-x-10">
+                    <img src={logo} alt="spin" className='w-[150px] h-[150px] spin' />
+                    <h2 className="text-5xl font-semibold text-white">
+                        Rifa Emprendedores del Desierto BNI
+                    </h2>
                 </div>
                 {rouletteData.length > 0 && (
-                <div className="overflow-y-auto h-[400px] p-4 rounded-md shadow-sm">
-                    <h3 className="text-xl font-semibold mb-2 text-white">Miembros ({members.length}):</h3>
-                    <ul>
-                        {members.map((member, index) => (
-                            <li key={index} className="text-white">-{member}</li>
-                        ))}
-                    </ul>
-                </div>
+                    <div className='w-full mt-10 pl-[135px]'>
+                        <h3 className="text-xl font-semibold mb-2 text-white">Miembros ({members.length}):</h3>
+                        <div className="overflow-y-auto h-[380px] p-4 rounded-md shadow-sm">
+                            <ul>
+                                {members.map((member, index) => (
+                                    <li key={index} className="text-white">-{member}</li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
                 )}
+                <div className='flex items-center justify-center w-full'>
+                    <label className="mt-4">
+                        <span className="sr-only">Choose file</span>
+                        <input
+                            type="file"
+                            accept=".xlsx, .xls"
+                            onChange={handleFileUpload}
+                            className="block w-full text-sm text-gray-500
+                                    file:mr-4 file:py-2 file:px-4
+                                    file:rounded-full file:border-0
+                                    file:text-sm file:font-semibold
+                                    file:bg-blue-50 file:text-black
+                                    hover:file:bg-red-50"
+                        />
+                    </label>
                 </div>
             </div>
 
