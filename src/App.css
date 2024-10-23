@@ -1,38 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  padding: 0rem;
+  background: #1f1f1f;
+}
+
+
+.button {
+  font-size: larger;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: black;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: fit-content;
+  width: fit-content;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.roulette-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: +9;
+  border-radius: 5rem;
+  width: 5rem;
+  height: 5rem;
+  transform: translate(-55%, -55%);
+  background: white;
+  color: #000;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+
+.hidden {
+  display: none;
+}
+
+i,
+svg {
+  margin-right: 1.6rem;
+}
 .App {
+  font-family: sans-serif;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.text-title {
+  font-size: 1.25rem;
+  color: #5b627d;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.prize-message {
+  border: 1px solid #dcdcdc;
+  padding: 20px 35px;
+  border-radius: 0.5rem;
+  color: #fff;
+  max-width: 450px;
+  margin: 0 auto;
+  cursor: pointer;
+  background: #7eb62e;
+  background: rgb(35, 155, 99);
+  background: linear-gradient(
+    0deg,
+    rgba(35, 155, 99, 1) 0%,
+    rgba(100, 176, 49, 1) 100%
+  );
+}
+
+.roulette-container {
+  position: relative;
+  width: 100%;
+  max-width: 100vh;
+  height: auto;
+  aspect-ratio: 1;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.members-container {
+  overflow-y: auto; /* Habilitar scroll */
+  flex: 1; /* O usa height: calc(100% - X px) si hay otros elementos */
+}
+
+.roulette-container > div {
+  width: 100%;
+  height: 100%;
+  max-width: unset;
+  max-height: unset;
+}
+
+.main-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+@keyframes spin {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.spin {
+  animation: spin 8s linear infinite; /* 2 segundos de duración, movimiento lineal y repetición infinita */
 }
