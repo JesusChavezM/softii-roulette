@@ -104,12 +104,12 @@ const WheelComponent = () => {
                     <div className="flex flex-col items-start mx-16 mb-40">
                         <img src={`${process.env.PUBLIC_URL}/icons/softii_white.svg`} alt="roulette" />
                         <span className="text-white text-4xl mt-[22px]">¿Quién será el</span>
-                        <span className="text-white text-4xl font-semibold">Ganador 💫✨</span>
+                        <span className="text-white text-4xl font-semibold my-2">Ganador 💫✨</span>
                         <span className="text-white text-3xl">de ésta semana?</span>
                         <button
                             onClick={handleSpinClick}
                             disabled={mustSpin}
-                            className="rounded-md p-2 bg-[#ED6A5A] cursor-pointer text-white font-semibold mt-[22px]"
+                            className="rounded-md p-2 bg-[#ED6A5A] cursor-pointer text-white font-semibold mt-[22px] text-[20px] px-4"
                         >
                             Elegir Ganador
                         </button>
@@ -126,7 +126,7 @@ const WheelComponent = () => {
                                     prizeNumber={prizeNumber}
                                     data={rouletteData}
                                     outerBorderColor={["#ccc"]}
-                                    outerBorderWidth={[3]}
+                                    outerBorderWidth={[0]}
                                     innerBorderColor={["#f2f2f2"]}
                                     radiusLineColor={["transparent"]}
                                     radiusLineWidth={[1]}
@@ -149,6 +149,7 @@ const WheelComponent = () => {
                                             transform: 'rotate(157deg)',
                                       },
                                     }}
+                                    style={{ boxShadow: '0px 9px 28px 8px rgba(255, 255, 255, 630)'}}
                                 />
                                 <button
                                     className="button roulette-button"
@@ -170,8 +171,8 @@ const WheelComponent = () => {
                                             <span className="text-white text-[72px]">¡Ganaste!</span>
                                             <p className="font-semibold text-white text-[110px]">{winner}</p>
                                             <div className="flex justify-center">
-                                                <button className="rounded-md p-2 bg-[#141414] cursor-pointer text-white font-semibold mt-[22px] mr-6" onClick={() => setWinner(null)}>Regresar</button>
-                                                <button onClick={() => { handleSpinClick(); setWinner(null); }} className="rounded-md p-2 bg-[#ED6A5A] cursor-pointer text-white font-semibold mt-[22px]" > Volver a Girar </button>
+                                                <button className="rounded-md p-2 bg-[#141414] cursor-pointer text-white font-semibold mt-[22px] mr-6 text-[20px] px-4" onClick={() => setWinner(null)}>Regresar</button>
+                                                <button onClick={() => { handleSpinClick(); setWinner(null); }} className="rounded-md p-2 bg-[#ED6A5A] cursor-pointer text-white font-semibold mt-[22px] text-[20px] px-4" > Volver a Girar </button>
                                             </div>
                                         </div>
                                     </div>
