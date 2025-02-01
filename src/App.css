@@ -5,7 +5,7 @@
 body {
   margin: 0;
   padding: 0rem;
-  background: linear-gradient(0deg, #1f1f1f 0%, #3a3a3a 100%);
+  background: black;
 }
 
 
@@ -34,7 +34,7 @@ body {
   width: 5rem;
   height: 5rem;
   transform: translate(-55%, -55%);
-  background: white;
+  background: black;
   color: #000;
   font-size: 0.8rem;
   font-weight: bold;
@@ -80,7 +80,7 @@ svg {
 
 .roulette-container {
   position: relative;
-  width: 100%;
+  width: 200%;
   max-width: 100vh;
   height: auto;
   aspect-ratio: 1;
